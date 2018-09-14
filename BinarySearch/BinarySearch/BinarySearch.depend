@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1536884235 source:c:\users\ucspf\documents\github\ada-2018-02\binarysearch\binarysearch\main.cpp
+	<iostream>
+	<vector>
+
