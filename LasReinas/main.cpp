@@ -22,9 +22,11 @@ bool isSafe(int **matriz, int row, int col, int fils, int cols)
 	int i, j;
 
 	/* Check this row on left side */
-	for (i = 0; i < col; i++)
-		if (matriz[row][i])
+	for (i = 0; i < col; i++) {
+		if (matriz[row][i]) {
 			return false;
+		}
+	}
 
 	/* Check upper diagonal on left side */
 	for (i = row, j = col; i >= 0 && j >= 0; i--, j--)
@@ -47,7 +49,7 @@ bool solveNQUtil(int **matriz, int col, int fils, int cols)
 	then return true */
 	if (col >= cols)
 		return true;
-
+	cout << "columna#: " << col << endl;
 	/* Consider this column and try placing
 	this queen in all rows one by one */
 	for (int i = 0; i < fils; i++)
@@ -75,14 +77,6 @@ bool solveNQUtil(int **matriz, int col, int fils, int cols)
 	return false;
 }
 
-/* This function solves the N Queen problem using
-Backtracking. It mainly uses solveNQUtil() to
-solve the problem. It returns false if queens
-cannot be placed, otherwise, return true and
-prints placement of queens in the form of 1s.
-Please note that there may be more than one
-solutions, this function prints one  of the
-feasible solutions.*/
 bool solveNQ(int **matriz, int fils, int cols)
 {
 	//llenar la matriz con 0 para dejarla lista
@@ -93,7 +87,7 @@ bool solveNQ(int **matriz, int fils, int cols)
 	}
 	
 	if (solveNQUtil(matriz, 0, fils, cols) == false){
-		printf("Solution does not exist");
+		cout << "no hay solucion: " << endl;
 		return false;
 	}
 
@@ -110,6 +104,10 @@ int main()
 	cin >> fils;
 	cout << "cols: ";
 	cin >> cols;
+
+	/*int queens;
+	cout << "numero de reinas: " << endl;
+	cin >> queens;*/
 
 	int** matriz = new int*[fils];
 	for (int i = 0; i < fils; ++i) {
