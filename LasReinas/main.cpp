@@ -35,7 +35,7 @@ bool validarPosicion(int **matriz, int row, int col, int fils, int cols){
 	return true;
 }
 
-bool solveNQUtil(int **matriz, int col, int fils, int cols){
+bool backtracking(int **matriz, int col, int fils, int cols){
 	//si todas las reinas han sido colocadas - Condicion de parada
 	if (col >= cols) {
 		return true;
@@ -48,7 +48,7 @@ bool solveNQUtil(int **matriz, int col, int fils, int cols){
 			matriz[i][col] = 1;
 			printMatriz(matriz, fils, cols);
 			//pasa a la siguiente columna
-			if (solveNQUtil(matriz, col + 1, fils, cols)) { 
+			if (backtracking(matriz, col + 1, fils, cols)) {
 				return true;
 			}
 			//si la reina colocada no da la solucion entonces la borra
@@ -56,20 +56,17 @@ bool solveNQUtil(int **matriz, int col, int fils, int cols){
 			printMatriz(matriz, fils, cols);
 		}
 	}
-
-	/* If the queen cannot be placed in any row in
-	this colum col  then return false */
 	return false;
 }
 
-bool solveNQ(int **matriz, int fils, int cols){
+bool nreinas(int **matriz, int fils, int cols){
 	//llenar la matriz con 0 para dejarla lista
 	for (int x = 0; x < fils; x++) {
 		for (int y = 0; y < cols; y++) {
 			matriz[x][y] = 0;
 		}
 	}
-	if (solveNQUtil(matriz, 0, fils, cols) == false){
+	if (backtracking(matriz, 0, fils, cols) == false){
 		cout << "no hay solucion: " << endl;
 		return false;
 	}
@@ -94,7 +91,7 @@ int main(){
 		matriz[i] = new int[cols];
 	}
 
-	solveNQ(matriz, fils, cols);
+	nreinas(matriz, fils, cols);
 
 	system("pause");
 	return 0;
