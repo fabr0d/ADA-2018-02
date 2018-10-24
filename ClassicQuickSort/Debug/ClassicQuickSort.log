@@ -1,2 +1,3 @@
 ﻿  main.cpp
-  ClassicQuickSort.vcxproj -> C:\Users\ucspf\Documents\GitHub\ADA-2018-02\ClassicQuickSort\Debug\ClassicQuickSort.exe
+c:\users\user\documents\github\ada-2018-02\classicquicksort\main.cpp(57): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  ClassicQuickSort.vcxproj -> C:\Users\User\Documents\GitHub\ADA-2018-02\ClassicQuickSort\Debug\ClassicQuickSort.exe
