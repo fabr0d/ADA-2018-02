@@ -2,12 +2,21 @@
 #include<stdio.h> 
 using namespace std;
 
+//Funcion para saber si se salio del tablero
 bool VerificarPaso(int x, int y, int **sol, int fils, int cols){
-	return (x >= 0 && x < fils && y >= 0 &&
-		y < cols && sol[x][y] == -1);
+	return (x >= 0 && x < fils && y >= 0 && y < cols && sol[x][y] == -1);
 }
 
-int backtracking(int x, int y, int pasoi, int **sol, int xMovimientos[8], int yMovimientos[8], int fils, int cols){
+void printMatriz(int **sol, int fils, int cols){
+	for (int x = 0; x < fils; x++)
+	{
+		for (int y = 0; y < cols; y++)
+			printf(" %2d ", sol[x][y]);
+		printf("\n");
+	}
+}
+
+bool backtracking(int x, int y, int pasoi, int **sol, int xMovimientos[8], int yMovimientos[8], int fils, int cols){
 	int k, next_x, next_y;
 	if (pasoi == fils * cols) {
 		return true;
@@ -30,15 +39,6 @@ int backtracking(int x, int y, int pasoi, int **sol, int xMovimientos[8], int yM
 		}
 	}
 	return false;
-}
-
-void printMatriz(int **sol, int fils, int cols){
-	for (int x = 0; x < fils; x++)
-	{
-		for (int y = 0; y < cols; y++)
-			printf(" %2d ", sol[x][y]);
-		printf("\n");
-	}
 }
 
 bool RecorridoCaballo(int x1,int y1,int **sol,int fils,int cols){
