@@ -52,9 +52,11 @@ int main(){
 		*(arr + i) = rand() % tam+100;
 		//*(arr + i) = eval[i];
 	}
-	print(arr, tam);
+	//print(arr, tam);
+	clock_t tStart = clock();
 	quickSort(arr, 0, tam - 1);
-	print(arr, tam);
+	printf("Time taken: %.2fs\n", (double)(clock() - tStart) / CLOCKS_PER_SEC);
+	//print(arr, tam);
 	delete[] arr;
 	system("pause");
 	return 0;

@@ -61,10 +61,12 @@ int main(){
 	for (int i = 0; i < n; i++) {
 		*(arr + i) = rand() % n + 100;
 	}
-	print(arr, n);
+	//print(arr, n);
+	clock_t tStart = clock();
 	QuickSort(arr, 0, n - 1);
-	cout << "\nArreglo Ordenado" << endl;
-	print(arr, n);
+	printf("Time taken: %.2fs\n", (double)(clock() - tStart) / CLOCKS_PER_SEC);
+	//cout << "\nArreglo Ordenado" << endl;
+	//print(arr, n);
 	system("pause");
 	return 0;
 }

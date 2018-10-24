@@ -1,4 +1,4 @@
 ﻿  main.cpp
-c:\users\user\documents\github\ada-2018-02\quicksortrandompivot\main.cpp(70): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-c:\users\user\documents\github\ada-2018-02\quicksortrandompivot\main.cpp(65): warning C4101: 'i': variable local sin referencia
-  QuickSortRandomPivot.vcxproj -> C:\Users\User\Documents\GitHub\ADA-2018-02\QuickSortRandomPivot\Debug\QuickSortRandomPivot.exe
+c:\users\ucspf\documents\github\ada-2018-02\quicksortrandompivot\main.cpp(60): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+c:\users\ucspf\documents\github\ada-2018-02\quicksortrandompivot\main.cpp(55): warning C4101: 'i': variable local sin referencia
+  QuickSortRandomPivot.vcxproj -> C:\Users\ucspf\Documents\GitHub\ADA-2018-02\QuickSortRandomPivot\Debug\QuickSortRandomPivot.exe
